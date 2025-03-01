@@ -1,6 +1,8 @@
 import { createEffect, createSignal } from "solid-js";
 import { gamekey, today, useGame } from "./service";
 import { useInfoDialog } from "../info/view";
+import { game_name } from "../../util/const";
+import { toTitleCase } from "../../util/words";
 
 export const baseVersion = "v0.2.6";
 
@@ -48,7 +50,7 @@ export function GameInfo() {
     <div class="flex flex-col">
       <div class="space-y-1">
         <div class="flex text-4xl space-x-2 items-center">
-          <div>Template</div>
+          <div>{toTitleCase(game_name)}</div>
           <div>#{game.gamekey}</div>
           <div
             id="game-version"
